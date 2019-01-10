@@ -2,7 +2,7 @@ import win32api
 import win32con
 from time import sleep
 
-# Keyboard dictionary from https://gist.github.com/chriskiehl/2906125
+# Keyboard dictionary and functions from https://gist.github.com/chriskiehl/2906125
 
 VK_CODE = {'backspace':0x08,
            'tab':0x09,
