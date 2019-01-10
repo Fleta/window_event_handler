@@ -1,6 +1,6 @@
 # window_event_handler
 
-created to handler window event by python
+created to handle window event by python
 
 ### installation
 
