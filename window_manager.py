@@ -1,6 +1,7 @@
 import win32gui
 import win32con
 import re
+import keyEventHandler
 
 class WindowMgr:
     """Encapsulates some calls to the winapi for window management"""
@@ -22,9 +23,15 @@ class WindowMgr:
         """find a window whose title matches the wildcard regex"""
         self._handle = None
         win32gui.EnumWindows(self._window_enum_callback, wildcard)
+        # print(" :: " + wildcard + " :: ")
+        # print(self._handle)
         return self
 
     def show_window(self):
         """put the window in the foreground"""
-        # win32gui.SetForegroundWindow(self._handle)
+        keyEventHandler.pressHoldRelease('alt')
+        win32gui.SetForegroundWindow(self._handle)
         win32gui.ShowWindow(self._handle, win32con.SW_SHOWMAXIMIZED)
+
+    def minimize_window(self):
+        win32gui.ShowWindow(self._handle, win32con.SW_SHOWMINIMIZED)
